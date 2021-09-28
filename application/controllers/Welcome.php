@@ -3,7 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
+	//hello
+
 	/**
+	 * this is commit form parth
 	 * Index Page for this controller.
 	 *
 	 * Maps to the following URL
