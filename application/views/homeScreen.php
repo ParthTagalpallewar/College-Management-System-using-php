@@ -4,16 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>College Managment System</title>
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/style.css';?>">
-    </head>    
-<body>  
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/style.css'; ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/home_screen.css'; ?>">
+    </head>
+<body>
           <!-- Header -->
   <section id="header">
     <div class="header container">
       <div class="nav-bar">
         <div class="brand">
           <a href="#hero">
-            <h1><span>G</span>overnment <span>P</span>olytechnic <span>A</span>mravati</h2>
+              <h1 class = "heading">
+               <span>G</span>overnment
+               <span>P</span>olytechnic
+               <span>A</span>mravati
+              </h2>
           </a>
         </div>
         <div class="nav-list">
@@ -23,7 +28,7 @@
           <ul>
             <li><a href="#branches" data-after="branches">branches</a></li>
             <li><a href="#admission" data-after="admission">admission</a></li>
-            <li><a href="#media" data-after="media">media</a></li>
+            <li><a href="#facilities" data-after="facilities">facilities</a></li>
             <li><a href="#about" data-after="about">about</a></li>
             <li><a href="#login" data-after="login">login</a></li>
           </ul>
@@ -37,7 +42,7 @@
     <div class="about container">
       <div class="col-left">
         <div class="about-img">
-        <img src="<?php echo base_url('img/gpa_home.png'); ?>" />
+        <img id = "image" src="<?php echo base_url('img/gpa.jpg'); ?>" />
         </div>
       </div>
       <div class="col-right">
@@ -51,6 +56,6 @@
     </div>
   </section>
   <!-- End About Section -->
- 
+
 </body>
 </html>
