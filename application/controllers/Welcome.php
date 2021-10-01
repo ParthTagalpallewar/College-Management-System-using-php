@@ -7,5 +7,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+	function homeScreen(){
+		$this->load->view('homeScreen');
+}
 
 }
