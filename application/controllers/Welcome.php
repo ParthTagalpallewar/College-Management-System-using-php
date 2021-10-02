@@ -8,4 +8,9 @@ class Welcome extends CI_Controller {
 		$this->load->view('homeScreen');
 	}
 	
+	public function homeNavigation($view)
+	{
+
+		$this->load->view($view);
+	}
 }
