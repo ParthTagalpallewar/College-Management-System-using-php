@@ -11,6 +11,9 @@
     <link rel="stylesheet" href= "<?php echo base_url() . 'assets/fonts/material-icon/css/material-design-iconic-font.min.css'; ?>">
     <link rel="stylesheet" href= "<?php echo base_url() . 'assets/css/login.css'; ?>">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
 
 
 
@@ -22,10 +25,15 @@
         <!-- Sing in  Form -->
         <section class="sign-in">
             <div class="container">
+
+                 <div style = "display: flex; justify-content:flex-end; margin: 10px; padding-top: 10px">
+                    <button class="btn btn-primary" >Admin</button>
+                </div>
+              
+
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src= "<?php echo base_url() . 'assets/images/signin-image.jpg'; ?>" alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">Create an account</a>
                     </div>
 
                     <div class="signin-form">
@@ -33,7 +41,7 @@
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                                <input type="text" name="your_name" id="your_name" placeholder="ID Code"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
@@ -42,6 +50,15 @@
 
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+
+                                <a 
+                                    href="#Login Screen"
+                                    class="btn btn-secondary btn-lg"
+                                    style="margin-left: 10px; padding-top: 15px; padding-bottom: 15px; padding-left: 40px; padding-right: 40px; font-size: 15px"
+                                    >
+                                    Sign up
+                                </a>
+
                             </div>
                         </form>
 
