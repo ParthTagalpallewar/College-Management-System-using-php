@@ -39,12 +39,12 @@
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" value="<?php echo set_value('email');?>" placeholder="Your Email"/>
                             </div>
-                             <?php echo form_error('email'); ?>
+                            <?php echo form_error('email'); ?>
                             <div class="form-group" style = "margin-bottom: 10px; margin-top: 20px"">
                                 <label for="phone"><i class="zmdi zmdi-phone"></i></label>
                                 <input type="tel" name="phone" id="phone" value="<?php echo set_value('phone');?>" placeholder="Phone Number"/>
                             </div>
-                             <?php echo form_error('phone'); ?>
+                            <?php echo form_error('phone'); ?>
 
 
                             <div class="form-group" style = "margin-bottom: 10px; margin-top: 20px"">
@@ -62,12 +62,12 @@
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
 
-                                <a href="<?php echo base_url(). 'Welcome/homeNavigation/student_login'?>" class="btn btn-secondary btn-lg" style="margin-left: 10px; padding-top: 15px; padding-bottom: 15px; padding-left: 40px; padding-right: 40px; font-size: 15px">Login</a>
+                                <a href="<?php echo base_url(). 'Auth/login'?>" class="btn btn-secondary btn-lg" style="margin-left: 10px; padding-top: 15px; padding-bottom: 15px; padding-left: 40px; padding-right: 40px; font-size: 15px">Login</a>
                             </div>
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="<?php echo base_url() . 'assets/images/signup-image.jpg'; ?>" alt="sing up image"></figure>
+                        <figure><img src="<?php echo base_url() . 'assets/images/signup-image.jpg'; ?>" alt="SignUp Image"></figure>
                     </div>
                 </div>
             </div>

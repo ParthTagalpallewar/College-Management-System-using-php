@@ -22,6 +22,34 @@
 
     <div class="main">
 
+        <div class='container' style="padding-top: 10px">
+
+            <div class="row">
+                <div>
+                    <?php
+                    //success alert
+                    $success = $this->session->userdata('error');
+                    if ($success != "") { ?>
+
+                        <div class="alert alert-success"><?php echo $success ?></div>
+
+                    <?php } ?>
+
+
+                    <?php
+                    //failure alert
+                    $failure = $this->session->userdata('failure');
+                    if ($failure != "") { ?>
+
+                        <div class="alert alert-success"><?php echo $failure ?></div>
+
+                    <?php } ?>
+
+
+
+                </div>
+            </div>
+
         <!-- Sing in  Form -->
         <section class="sign-in">
             <div class="container">
@@ -39,15 +67,19 @@
                     <div class="signin-form">
                         <h2 class="form-title">Sign In</h2>
                         <form method="POST" class="register-form" id="login-form">
-                            <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="ID Code"/>
+                            <!-- Id Code -->
+                            <div class="form-group" style = "margin-bottom: 10px;">
+                                <label for="idcode"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="idcode" id="idcode" value="<?php echo set_value('idcode');?>" placeholder="ID Code"/>
                             </div>
-                            <div class="form-group">
-                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                            <?php echo form_error('idcode'); ?>
+                            <!-- password -->
+                            <div class="form-group" style = "margin-bottom: 10px; margin-top: 20px">
+                                <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="password" value="<?php echo set_value('password');?>" placeholder="Password"/>
                             </div>
-
+                            <?php echo form_error('password'); ?>
+                            <!-- Submit Button -->
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
 

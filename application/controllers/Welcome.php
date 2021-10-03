@@ -14,7 +14,6 @@ class Welcome extends CI_Controller {
 
 	public function homeNavigation($view)
 	{
-
 		$this->load->view($view);
 	}
 }
