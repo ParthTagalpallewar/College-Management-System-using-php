@@ -29,35 +29,32 @@
                         <h2 class="form-title">Sign up</h2>
 
                         <form method="post" class="register-form" id="register-form">
-                            <div class="form-group">
+                            <div class="form-group" style = "margin-bottom: 10px;">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" value="<?php echo set_value('name');?>" placeholder="Your Name"/>  
-                               
-
+                                <input type="text" name="name" id="name" value="<?php echo set_value('name');?>" placeholder="Your Name"/> 
                             </div>
-                             <?php echo form_error('name'); ?>
+                            <?php echo form_error('name'); ?>
 
-                            <div class="form-group">
+                            <div class="form-group" style = "margin-bottom: 10px; margin-top: 20px">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" value="<?php echo set_value('email');?>" placeholder="Your Email"/>
                             </div>
                              <?php echo form_error('email'); ?>
-                            <div class="form-group">
+                            <div class="form-group" style = "margin-bottom: 10px; margin-top: 20px"">
                                 <label for="phone"><i class="zmdi zmdi-phone"></i></label>
                                 <input type="tel" name="phone" id="phone" value="<?php echo set_value('phone');?>" placeholder="Phone Number"/>
                             </div>
                              <?php echo form_error('phone'); ?>
 
 
-                            <div class="form-group">
+                            <div class="form-group" style = "margin-bottom: 10px; margin-top: 20px"">
                                 <select class="form-select" name = "branch" aria-label="Default select example"  value="<?php echo set_value('branch');?>" id="branch">
-                                    <option selected>Select Branch</option>
-                                    <option value="cs">Computer Science</option>
-                                    <option value="it">Information Technology</option>
-                                    <option value="extc">Electronics</option>
-                                    <option value="electrical">Electrical</option>
-                                    <option value="mechanical">Mechanical</option>
-                                    <option value="civil">Civil</option>
+                                    <option value="CM">Computer Science</option>
+                                    <option value="IT">Information Technology</option>
+                                    <option value="XT">Electronics</option>
+                                    <option value="EE">Electrical</option>
+                                    <option value="ME">Mechanical</option>
+                                    <option value="CE">Civil</option>
                                 </select>
                                 <?php echo form_error('branch');?>
                             </div>
