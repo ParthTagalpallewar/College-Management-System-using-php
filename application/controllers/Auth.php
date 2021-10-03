@@ -1,8 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-<?php
 class Auth extends CI_controller{
+
+   
 /*
     function index(){
 
@@ -16,17 +17,15 @@ class Auth extends CI_controller{
 */
     function signup(){
 
-        //$this->load->model('sign_up');
-		echo "call method";
+
 
         $this -> form_validation -> set_rules('name' ,'name' ,'required');
         $this -> form_validation -> set_rules('email' ,'email' ,'required|valid_email');
-        $this -> form_validation -> set_rules('phone' ,'phone ' ,'required|FILTER_SANITIZE_NUMBER_INT');
+        $this -> form_validation -> set_rules('phone' ,'phone ' ,'required|max_length[10]|min_length[10]');
         $this -> form_validation -> set_rules('branch' ,'branch' ,'required');
 
         if($this->form_validation->run() == false){
 
-			echo "error" ;
             $this->load->view('student_register');
 
         }else{

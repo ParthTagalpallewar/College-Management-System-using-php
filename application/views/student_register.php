@@ -32,24 +32,25 @@
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" value="<?php echo set_value('name');?>" placeholder="Your Name"/>  
-                                <?php echo form_error('name');?>
+                               
 
                             </div>
+                             <?php echo form_error('name'); ?>
+
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" value="<?php echo set_value('email');?>" placeholder="Your Email"/>
-                                <?php echo form_error('email');?>
-
                             </div>
+                             <?php echo form_error('email'); ?>
                             <div class="form-group">
                                 <label for="phone"><i class="zmdi zmdi-phone"></i></label>
                                 <input type="tel" name="phone" id="phone" value="<?php echo set_value('phone');?>" placeholder="Phone Number"/>
-                                <?php echo form_error('phone');?>
-
                             </div>
+                             <?php echo form_error('phone'); ?>
+
 
                             <div class="form-group">
-                                <select class="form-select" aria-label="Default select example"  value="<?php echo set_value('branch');?>" id="branch">
+                                <select class="form-select" name = "branch" aria-label="Default select example"  value="<?php echo set_value('branch');?>" id="branch">
                                     <option selected>Select Branch</option>
                                     <option value="cs">Computer Science</option>
                                     <option value="it">Information Technology</option>
