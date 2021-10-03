@@ -66,7 +66,7 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign In</h2>
-                        <form method="POST" class="register-form" id="login-form">
+                        <form method="POST" class="register-form" id="login-form" action="<?php echo base_url()."Auth/login"?>">
                             <!-- Id Code -->
                             <div class="form-group" style = "margin-bottom: 10px;">
                                 <label for="idcode"><i class="zmdi zmdi-account material-icons-name"></i></label>
