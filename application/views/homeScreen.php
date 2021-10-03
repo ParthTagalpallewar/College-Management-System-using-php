@@ -26,11 +26,11 @@
             <div class="bar"></div>
           </div>
           <ul>
-            <li><a href="#branches" data-after="branches">branches</a></li>
+            <li><a href="<?php echo base_url(). 'Welcome/homeNavigation/branches'?>"data-after="branches">Department</a></li>
             <li><a href="#admission" data-after="admission">admission</a></li>
             <li><a href="#facilities" data-after="facilities">facilities</a></li>
             <li><a href="#about" data-after="about">about</a></li>
-            <li><a href="#login" data-after="login">login</a></li>
+            <li><a href="<?php echo base_url(). 'Welcome/homeNavigation/student_login'?>"data-after="login">login</a></li>
           </ul>
         </div>
       </div>

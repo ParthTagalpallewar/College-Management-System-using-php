@@ -11,4 +11,10 @@ class Welcome extends CI_Controller {
 	public function login(){
 		$this->load->view('student_login');
 	}
+
+	public function homeNavigation($view)
+	{
+
+		$this->load->view($view);
+	}
 }

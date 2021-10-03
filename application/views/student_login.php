@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
+    <title>Sign In</title>
 
 
     <!-- Font Icon -->
@@ -52,7 +52,7 @@
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
 
                                 <a 
-                                    href="#Login Screen"
+                                    href="<?php echo base_url(). 'Welcome/homeNavigation/student_register'?>"
                                     class="btn btn-secondary btn-lg"
                                     style="margin-left: 10px; padding-top: 15px; padding-bottom: 15px; padding-left: 40px; padding-right: 40px; font-size: 15px"
                                     >
