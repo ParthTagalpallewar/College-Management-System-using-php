@@ -72,7 +72,8 @@ class Auth extends CI_controller
             } else {
                 echo "error of code";
                 $this->session->set_flashdata('error', $loginResponse['message']);
-                redirect(base_url() . 'Auth/login');
+                $this->load->view('student_login');
+
             }
         }
     }

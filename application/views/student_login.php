@@ -84,7 +84,7 @@
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
 
                                 <a 
-                                    href="<?php echo base_url(). 'Welcome/homeNavigation/student_register'?>"
+                                    href="<?php echo base_url(). 'Auth/signup'?>"
                                     class="btn btn-secondary btn-lg"
                                     style="margin-left: 10px; padding-top: 15px; padding-bottom: 15px; padding-left: 40px; padding-right: 40px; font-size: 15px"
                                     >

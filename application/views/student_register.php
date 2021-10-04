@@ -28,7 +28,7 @@
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
 
-                        <form method="post" class="register-form" id="register-form">
+                        <form method="post" class="register-form" id="register-form" action = "<?php base_url(). "Auth/signup"?>">
                             <div class="form-group" style = "margin-bottom: 10px;">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" value="<?php echo set_value('name');?>" placeholder="Your Name"/> 
