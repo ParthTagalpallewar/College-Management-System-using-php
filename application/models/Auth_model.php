@@ -60,6 +60,8 @@ class Auth_model extends CI_Model
             return array(
                 "result" => true,
                 "data" => $user
+              //  redirect(base_url() . 'Welcome/homeNavigation/student_dashboard');
+
             );
         }
         //if user not found
