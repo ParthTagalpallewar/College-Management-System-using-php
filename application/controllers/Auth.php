@@ -70,7 +70,7 @@ class Auth extends CI_controller
             if ($loginResponse["result"]) {
                 echo "home Screen";
             } else {
-                echo "error of code";
+               
                 $this->session->set_flashdata('error', $loginResponse['message']);
                 $this->load->view('student_login');
 
