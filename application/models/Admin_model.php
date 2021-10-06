@@ -34,4 +34,15 @@ class Admin_model extends CI_Model
         return $this->db->order_by('id', 'DESC')->get('students')->result_array();
     }
 
+    public function getStudent($id){
+        return $this->db->where('id', $id)->get('students')->row_array();
+    }
+
+    public function updateStudentData($id, $data){
+        $this->db->where('id', $id)->update('students', $data);
+    }
+
+    public function deleteStudent($id){
+        $this->db->where('id', $id)->delete('students');
+    }
 }

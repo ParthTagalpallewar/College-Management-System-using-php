@@ -22,6 +22,8 @@
 
 <body class="home">
 
+
+
     <div class="container-fluid display-table">
         <div class="row display-table-row">
             <!-- Navigation Menu -->
@@ -49,8 +51,38 @@
             <!-- Content -->
             <div class="col-md-10 col-sm-11 display-table-cell v-align">
 
+
                 <h1 style='text-align: center; color: black; font-size: large; padding-top: 20px '>Government
                     Polytechnic Amravati</h1>
+
+                <hr>
+
+                <div class="row" style="width: 600px; padding-left: 100px; display:inline - block; padding-top: 20px
+ ">
+                    <div>
+                        <?php
+                            //success alert
+                            $success = $this->session->userdata('success');
+                            if ($success != "") {?>
+
+                        <div class="alert alert-success"><?php echo $success ?></div>
+
+                        <?php }?>
+
+
+                        <?php
+                            //failure alert
+                            $failure = $this->session->userdata('failure');
+                            if ($failure != "") {?>
+
+                        <div class="alert alert-success"><?php echo $failure ?></div>
+
+                        <?php }?>
+
+
+
+                    </div>
+                </div>
 
                 <div>
                     <section style="padding-top: 20px">
@@ -65,44 +97,56 @@
                                             style="align-content: flex-end;" method="post">
                                             <!-- Search View -->
                                             <input class="form-control" type="text" name="search"
-                                                value="<?php echo set_value('search');?>" placeholder="Search Name"
+                                                value="<?php echo set_value('search'); ?>" placeholder="Search Name"
                                                 style="
                                                     width: 300px;
                                                     height: 30px;
                                                     border-radius: 6px;
                                                     font-size: 12px;
                                                     color: black;
-                                                
+
                                                 ">
 
                                             <!-- Select Branch -->
-                                            <select class="form-control" name="department"
-                                                value="<?php echo set_value('department');?>" style="margin-left: 10px; 
+                                            <select class="form-control" name="department" style="margin-left: 10px;
                                                 border-radius: 8px;
                                                 height: 30px
                                                 ">
-                                                <option value="all">All</option>
-                                                <option value="CM">Computer</option>
-                                                <option value="IT">Information Technology</option>
-                                                <option value="XT">Electronics</option>
-                                                <option value="EE">Electrical</option>
-                                                <option value="ME">Mechanical</option>
-                                                <option value="CE">Civil</option>
+
+
+
+                                                <option value="all">All Departments</option>
+                                                <?php if (count($dropDownDepartments)): ?>
+
+                                                <?php foreach ($dropDownDepartments as $departmentsKey => $departmentValue): ?>
+
+                                                <option
+                                                    value=<?php echo $departmentsKey ?><?php echo set_select('department', $departmentsKey) ?>>
+                                                    <?php echo $departmentValue ?>
+                                                </option>
+
+                                                <?php endforeach;?> <?php endif;?>
                                             </select>
 
                                             <!-- Select Year -->
-                                            <select class="form-control" value="<?php echo set_value('year');?>"
-                                                name="year" style="margin-left: 10px; 
+                                            <select class="form-control" name="year" style="margin-left: 10px;
                                                 border-radius: 8px;
                                                 height: 30px
                                                 ">
+
                                                 <option value="all">All</option>
-                                                <option value="2017">2017</option>
-                                                <option value="2018">2018</option>
-                                                <option value="2019">2019</option>
-                                                <option value="2020">2020</option>
-                                                <option value="2021">2021</option>
-                                                <option value="2022">2022</option>
+
+                                                <?php if (count($dropDownYears)): ?>
+
+                                                <?php foreach ($dropDownYears as $yearsValue): ?>
+
+                                                <option
+                                                    value=<?php echo $yearsValue ?><?php echo set_select('year', $yearsValue) ?>>
+                                                    <?php echo $yearsValue ?>
+                                                </option>
+
+                                                <?php endforeach;?> <?php endif;?>
+
                                             </select>
 
                                             <!-- Apply Filter Button -->
@@ -133,19 +177,24 @@
                                                     <td><?php echo $student['phone'] ?></td>
                                                     <td><?php echo $student['branch'] ?></td>
                                                     <td>
-                                                        <a href="<?php echo base_url().'index.php/user/edit/'."abc"?>"
-                                                            style="font-size: 12px" class="btn btn-primary"> Update </a>
+                                                        <a href="<?php echo base_url() . 'Admin/updateStudent/' . $student['id'] ?>"
+                                                            style="font-size: 12px; border-radius: 5px"
+                                                            class="btn btn-primary"> Update
+                                                        </a>
                                                     </td>
                                                     <td>
-                                                        <a href="<?php echo base_url().'index.php/user/delete/'."abc"?>"
-                                                            style="font-size: 12px" class="btn btn-danger">Delete</a>
+                                                        <a href="<?php echo base_url() . 'Admin/deleteUser/' . $student['id'] ?>"
+                                                            style="font-size: 12px;  border-radius: 5px"" class=" btn
+                                                            btn-danger">Delete</a>
                                                     </td>
 
 
 
                                                     <?php }} else {?>
                                                 <tr>
-                                                    <td colspan="5">Record not found </td>
+                                                    <td colspan="5" style="color: red; font-size: 15px;">
+                                                        Record not found
+                                                    </td>
                                                 </tr>
 
                                                 <?php }?>
