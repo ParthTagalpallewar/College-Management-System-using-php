@@ -720,6 +720,10 @@ p {
 		flex-direction: row;
 	}
 
+	.form-gap {
+		padding-top: 70px;
+	}
+
 	#about .col-left {
 		width: 600px;
 		height: 400px;
