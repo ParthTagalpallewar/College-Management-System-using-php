@@ -27,7 +27,7 @@
             <div class="container">
 
                 <div style="display: flex; justify-content:flex-end; margin: 10px; padding-top: 10px">
-                    <button class="btn btn-primary">Admin</button>
+                    <a href="<?php echo base_url(). "Auth/adminAuth"?>" class=" btn btn-primary">Admin</a>
                 </div>
 
                 <div class="signup-content">
