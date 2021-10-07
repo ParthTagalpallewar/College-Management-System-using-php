@@ -16,10 +16,11 @@ class Auth extends CI_controller
 
         if ($this->form_validation->run() == false) {
 
-            redirect(base_url() . 'studentDashboard/index');
-            
+            $this->load->view('student_register');
+
 
         } else {
+            echo $this->session->userdata('user_id');
             ///save record to database
             $formArray = array(
                 'name' => $this->input->post('name'),
@@ -37,7 +38,9 @@ class Auth extends CI_controller
             $this->session->set_userdata('user_id', $student['id']);
             $this->session->set_userdata('user_name', $student['name']);
             
-            $this->load->view('Student/home.php');
+            redirect(base_url() . 'studentDashboard/index');
+
+           
 
         }
     }
