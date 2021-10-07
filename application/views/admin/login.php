@@ -60,11 +60,6 @@
             <section class="sign-in">
                 <div class="container">
 
-                    <div style="display: flex; justify-content:flex-end; margin: 10px; padding-top: 10px">
-                        <a href="<?php echo base_url(). 'Auth/adminAuth'?>" class="btn btn-primary">Admin</a>
-                    </div>
-
-
                     <div class="signin-content">
                         <div class="signin-image">
                             <figure><img src="<?php echo base_url() . 'assets/images/signin-image.jpg'; ?>"
@@ -72,16 +67,10 @@
                         </div>
 
                         <div class="signin-form">
-                            <h2 class="form-title">Sign In</h2>
+                            <h2 class="form-title">Admin Sign In</h2>
                             <form method="POST" class="register-form" id="login-form"
-                                action="<?php echo base_url()."Auth/login"?>">
-                                <!-- Id Code -->
-                                <div class="form-group" style="margin-bottom: 10px;">
-                                    <label for="idcode"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                    <input type="text" name="idcode" id="idcode"
-                                        value="<?php echo set_value('idcode');?>" placeholder="ID Code" />
-                                </div>
-                                <?php echo form_error('idcode'); ?>
+                                action="<?php echo base_url()."Auth/adminAuth"?>">
+
                                 <!-- password -->
                                 <div class="form-group" style="margin-bottom: 10px; margin-top: 20px">
                                     <label for="password"><i class="zmdi zmdi-lock"></i></label>
@@ -89,15 +78,10 @@
                                         value="<?php echo set_value('password');?>" placeholder="Password" />
                                 </div>
                                 <?php echo form_error('password'); ?>
+
                                 <!-- Submit Button -->
                                 <div class="form-group form-button">
                                     <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
-
-                                    <a href="<?php echo base_url(). 'Auth/signup'?>" class="btn btn-secondary btn-lg"
-                                        style="margin-left: 10px; padding-top: 15px; padding-bottom: 15px; padding-left: 40px; padding-right: 40px; font-size: 15px">
-                                        Sign up
-                                    </a>
-
                                 </div>
                             </form>
 

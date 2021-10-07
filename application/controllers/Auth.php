@@ -95,6 +95,37 @@ class Auth extends CI_controller
         $this->session->unset_userdata('user_id');
         $this->session->set_flashdata('success', 'Record deleted successfully');
         redirect(base_url() . 'Welcome/homeNavigation/homeScreen');
+    }
 
+    public function adminAuth()
+    {
+
+       
+        $this->form_validation->set_rules('password', 'password', 'required|callback_match_password',
+                array('match_password' => 'Password Does Not Match'));
+
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+
+        if ($this->form_validation->run() == false) {
+
+            $this->load->view('admin/login');
+
+        } else {
+            
+            redirect(base_url() . 'Admin/index');
+
+          
+        }
+        
+
+    }
+    
+    public function match_password($password){
+        
+        if($password == "admin"){
+            return true;
+        }
+        
+        return false;
     }
 }
