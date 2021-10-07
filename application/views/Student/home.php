@@ -47,9 +47,94 @@
 
                         <!-- Screen  -->
                         <div class="user-dashboard">
-                            <h1 style="text-align: right; color: blue;">
-                                <?php echo "Hello, " . $this->session->userdata('user_name'); ?>
-                            </h1>
+                            <!-- Content -->
+                            <div class="col-md-10 col-sm-11 display-table-cell v-align">
+
+
+                                <h1 style='text-align: center; color: black; font-size: large; padding-top: 20px '>
+                                    All Events </h1>
+
+                                <hr>
+
+                                <div class="row"
+                                    style="width: 600px; padding-left: 100px; display:inline - block; padding-top: 20px ">
+                                    <div>
+                                        <?php
+                            //success alert
+                            $success = $this->session->userdata('success');
+                            if ($success != "") {?>
+
+                                        <div class="alert alert-success"><?php echo $success ?></div>
+
+                                        <?php }?>
+
+
+                                        <?php
+                            //failure alert
+                            $failure = $this->session->userdata('failure');
+                            if ($failure != "") {?>
+
+                                        <div class="alert alert-success"><?php echo $failure ?></div>
+
+                                        <?php }?>
+
+
+
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <section style="padding-top: 20px">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="table-wrap" style="align-content: flex-end;">
+
+                                                        <!-- Table -->
+                                                        <table class="table" style="margin-top: 20px">
+                                                            <thead class="thead-primary">
+                                                                <tr>
+
+                                                                    <th>Date</th>
+                                                                    <th>Name</th>
+                                                                    <th>Description</th>
+
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody style='padding-top: 10px '>
+                                                                <?php if (!empty($events)) {foreach ($events as $student) {?>
+
+                                                                <tr>
+
+                                                                    <td><?php echo $student['date'] ?></td>
+                                                                    <td><?php echo $student['event'] ?></td>
+                                                                    <td><?php echo $student['description'] ?>
+
+                                                                    </td>
+
+
+
+
+                                                                    <?php }} else {?>
+                                                                <tr>
+                                                                    <td colspan="5"
+                                                                        style="color: red; font-size: 15px;">
+                                                                        Record not found
+                                                                    </td>
+                                                                </tr>
+
+                                                                <?php }?>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
 
 </body>

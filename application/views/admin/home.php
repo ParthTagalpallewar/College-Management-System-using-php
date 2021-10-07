@@ -35,6 +35,9 @@
                         <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span
                                     class="hidden-xs hidden-sm">Home</span></a></li>
 
+                        <li><a href="<?php echo base_url() . 'Admin/addEvent' ?>"><i class="fa fa-home"
+                                    aria-hidden="true"></i><span class="hidden-xs hidden-sm">Event</span></a></li>
+
                         <li><a href="<?php echo base_url() . 'Admin/logout' ?>"><i class="fa fa-cog"
                                     aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logout</span></a></li>
                     </ul>
@@ -50,8 +53,7 @@
 
                 <hr>
 
-                <div class="row" style="width: 600px; padding-left: 100px; display:inline - block; padding-top: 20px
- ">
+                <div class="row" style="width: 600px; padding-left: 100px; display:inline - block; padding-top: 20px ">
                     <div>
                         <?php
                             //success alert

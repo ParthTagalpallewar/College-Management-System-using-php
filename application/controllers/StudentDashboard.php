@@ -6,7 +6,14 @@ class studentDashboard extends CI_Controller
 
     public function index()
     {
-        $this->load->view("Student/home");
+        $user = $this->Auth_model->getUserById($this->session->userdata('user_id'));
+
+        $userBranch = $user['branch'];
+        $userYear = $user['year'];
+
+        $events = $this->Event_model->getEvents($userYear, $userBranch);
+
+        $this->load->view("Student/home", array('events' => $events));
 
     }
 

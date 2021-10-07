@@ -44,6 +44,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="col-md-10 col-sm-11 display-table-cell v-align">
                 <div class="row">
                     <div id="content">

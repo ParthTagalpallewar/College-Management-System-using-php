@@ -64,7 +64,50 @@ class Admin extends CI_controller
 
     }
 
-    public function logout(){
+    public function logout()
+    {
         $this->load->view('homeScreen');
+    }
+
+    public function addEvent()
+    {
+
+        $data = array(
+            'year' => $this->input->post('year'),
+            'branch' => $this->input->post('department'),
+            'event' => $this->input->post('event'),
+            'description' => $this->input->post('description'),
+        );
+
+        $this->form_validation->set_rules('event', 'Event', 'required');
+        $this->form_validation->set_rules('description', 'description', 'required');
+
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+
+        //if any error in form validation
+        if ($this->form_validation->run() == false) {
+
+            $departmentsArray = array(
+                'CM' => 'Computer Science',
+                'IT' => 'Information Technology',
+                'XT' => 'Electronics',
+                'EE' => 'Electrical',
+                'ME' => 'Mechanical',
+                'CE' => 'Civil',
+            );
+            $yearsArray = array('2017', '2018', '2019', '2020', '2021', '2022');
+
+            //just load the view again
+            $this->load->view('admin/event', array(
+                'departments' => $departmentsArray,
+                'years' => $yearsArray,
+            ));
+
+        } else {
+            //add event and move to admin home screen
+            $this->Event_model->addEvent($data);
+            redirect(base_url() . 'Admin/index');
+        }
+
     }
 }

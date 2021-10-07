@@ -16,7 +16,8 @@ class Auth extends CI_controller
 
         if ($this->form_validation->run() == false) {
 
-            $this->load->view('student_register');
+            redirect(base_url() . 'studentDashboard/index');
+            
 
         } else {
             ///save record to database
@@ -78,7 +79,7 @@ class Auth extends CI_controller
                 $this->session->set_userdata('user_id',  $loginResponse['data']['id']);
                 $this->session->set_userdata('user_name',  $loginResponse['data']['name']);
 
-                $this->load->view('Student/home');
+                redirect(base_url().'studentDashboard/index');
               
             } else {
                
