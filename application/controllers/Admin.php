@@ -30,7 +30,6 @@ class Admin extends CI_controller
         //loading model and sending all students in database
         $this->load->view('admin/home', $passingData);
     }
-
     //call this function when click update btn in admin dashboard and
     //what to open update student page
     public function updateStudent($id)
@@ -63,5 +62,9 @@ class Admin extends CI_controller
 
         redirect(base_url() . '/Admin/index');
 
+    }
+
+    public function logout(){
+        $this->load->view('homeScreen');
     }
 }
