@@ -13,4 +13,9 @@ class Welcome extends CI_Controller {
 
 		$this->load->view($view);
 	}
+	public function studentDashboard()
+	{
+
+		$this->load->view("studentDashboard/student_dashboard");
+	}
 }

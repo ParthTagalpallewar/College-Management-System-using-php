@@ -29,9 +29,15 @@ class Auth extends CI_controller
 
             );
 
-            $this->Auth_model->signup($formArray);
+            $student = $this->Auth_model->signup($formArray);
             $this->session->set_flashdata('success', 'Record added successfully!');
-            //    redirect(base_url() . 'index/homeScreen');
+            
+            //save user data and name
+            $this->session->set_userdata('user_id', $student['id']);
+            $this->session->set_userdata('user_name', $student['name']);
+            
+            $this->load->view('Student/home.php');
+
         }
     }
 
@@ -68,7 +74,12 @@ class Auth extends CI_controller
             $loginResponse = $this->Auth_model->loginUser($formArray);
 
             if ($loginResponse["result"]) {
-                echo "home Screen";
+                //save user name and password
+                $this->session->set_userdata('user_id',  $loginResponse['data']['id']);
+                $this->session->set_userdata('user_name',  $loginResponse['data']['name']);
+
+                $this->load->view('Student/home');
+              
             } else {
                
                 $this->session->set_flashdata('error', $loginResponse['message']);
@@ -76,5 +87,14 @@ class Auth extends CI_controller
 
             }
         }
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('user_name');
+        $this->session->unset_userdata('user_id');
+        $this->session->set_flashdata('success', 'Record deleted successfully');
+        redirect(base_url() . 'Welcome/homeNavigation/homeScreen');
+
     }
 }

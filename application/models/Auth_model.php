@@ -14,6 +14,12 @@ class Auth_model extends CI_Model
         $formArray['password'] = $idCode;
 
         $this->db->insert('students', $formArray);
+        //get lastly inserted Id 
+        $userId = $this->db->insert_id();
+        $user = $this->db->where('id', $userId)->get("students")->row_array();
+
+        return $user;
+        
     }
 
     public function getIdCode($formArray)
@@ -60,6 +66,8 @@ class Auth_model extends CI_Model
             return array(
                 "result" => true,
                 "data" => $user
+              //  redirect(base_url() . 'Welcome/homeNavigation/student_dashboard');
+
             );
         }
         //if user not found
@@ -69,6 +77,14 @@ class Auth_model extends CI_Model
                 "message" => "Wrong Id-Code or password"
             );
         }
+    }
+
+    public function updatePassword($userId,$password){
+        $this->db->where('id', $userId)->update('students', array('password' => $password));
+    }
+
+    public function getUserById($id){
+        return $this->db->where('id', $id)->get('students')->row_array();
     }
 
 }
