@@ -108,7 +108,7 @@
                                                                 CODE</label>
                                                             <input type="text" id="input-first-name"
                                                                 class="form-control form-control-alternative"
-                                                                placeholder="First name" value="Lucky"
+                                                                placeholder="First name"
                                                                 style="color: black; font-weight: 600"
                                                                 value="<?php echo $student['idcode']?>">
                                                         </div>
